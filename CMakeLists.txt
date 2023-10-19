@@ -5,10 +5,13 @@ set(NAME VulkanEngine)
 project(${NAME})
 
 set(CMAKE_CXX_STANDARD 17)
-
-
-include_directories(external)
-include_directories(Engine)
 find_package(Vulkan)
 
+include_directories(${Vulkan_INCLUDE_DIRS})
+include_directories(external)
+include_directories(Engine)
 
+
+
+add_subdirectory(Engine)
+add_subdirectory(sandbox)
