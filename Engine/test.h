@@ -4,9 +4,14 @@
 
 #ifndef VULKANENGINE_TEST_H
 #define VULKANENGINE_TEST_H
+#include<iostream>
 
 
+void print()
+{
+    printf("hello");
 
+}
 
 
 #endif //VULKANENGINE_TEST_H
