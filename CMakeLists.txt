@@ -7,10 +7,14 @@ project(${NAME})
 set(CMAKE_CXX_STANDARD 17)
 find_package(Vulkan)
 
+
+
 include_directories(${Vulkan_INCLUDE_DIRS})
 include_directories(external)
 include_directories(Engine)
 
+#第三方库全局
+add_subdirectory(extern/spdlog)
 
 
 add_subdirectory(Engine)

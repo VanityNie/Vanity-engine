@@ -5,11 +5,13 @@
 #ifndef VULKANENGINE_TEST_H
 #define VULKANENGINE_TEST_H
 #include<iostream>
-
-
+#include "spdlog/spdlog.h"
+#include "spdlog/cfg/env.h"   // support for loading levels from the environment variable
+#include "spdlog/fmt/ostr.h"  // support for user defined types
 void print()
 {
-    printf("hello");
+    spdlog::info("Welcome to spdlog version {}.{}.{}  !", SPDLOG_VER_MAJOR, SPDLOG_VER_MINOR,
+                 SPDLOG_VER_PATCH);
 
 }
 
