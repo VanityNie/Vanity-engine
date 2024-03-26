@@ -6,6 +6,7 @@
 #define VANITY_ENGINE_RHI_H
 
 #include "vulkan/vulkan.hpp"
+#include "magic_enum_all.hpp"
 #include<iostream>
 void test()
 {vk::ApplicationInfo appInfo("Vulkan Test", VK_MAKE_VERSION(1, 0, 0), "No Engine",
@@ -25,6 +26,15 @@ void test()
     }
 
     vk::InstanceCreateInfo instanceCreateInfo({}, &appInfo);
+
+
+    auto v =  magic_enum::enum_names<VkAccessFlagBits>();
+
+    for(auto n:v)
+    {
+        std::cout<<n<<std::endl;
+    }
+
 
     // 创建实例
     vk::Instance instance;
