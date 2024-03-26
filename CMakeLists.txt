@@ -1,26 +1,24 @@
 
-cmake_minimum_required(VERSION 3.4 FATAL_ERROR)
-set(NAME VulkanEngine)
+cmake_minimum_required(VERSION 3.1.7)
 
+
+set(NAME VanityEngine)
 project(${NAME})
 
-set(CMAKE_CXX_STANDARD 17)
-find_package(Vulkan)
+
+#vulkan
+find_package(Vulkan REQUIRED)
+
+
+#third party add
+
+
+
+#engine
+
+add_subdirectory(engine)
+add_subdirectory(test)
 
 
 
 
-#set out put dir
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/")
-
-
-include_directories(${Vulkan_INCLUDE_DIRS})
-include_directories(external)
-include_directories(Engine)
-
-#第三方库全局
-add_subdirectory(extern/spdlog)
-add_subdirectory(extern/spiv-cross)
-
-add_subdirectory(Engine)
-add_subdirectory(sandbox)

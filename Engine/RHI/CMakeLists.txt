@@ -1,11 +1,6 @@
-cmake_minimum_required(VERSION 3.16)
-set(CMAKE_CXX_STANDARD 20)
-file(GLOB BASE_SRC "*.cpp" "*.hpp" "*.h" )
+file(GLOB_RECURSE srcs CONFIGURE_DEPENDS *.cpp *.h)
+add_library(RHI STATIC ${srcs})
 
 
-
-
-add_library(base SHARED ${BASE_SRC}  )
-
-target_link_libraries(base PUBLIC ${Vulkan_LIBRARY} $<TARGET_OBJECTS:SPIV_LIB>$ )
-target_link_directories(base PUBLIC   ${Vulkan_INCLUDE_DIRS})
+target_link_libraries(RHI ${Vulkan_LIBRARY})
+target_include_directories(RHI PUBLIC include ${Vulkan_INCLUDE_DIRS})
