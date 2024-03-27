@@ -7,6 +7,7 @@
 
 #include "vulkan/vulkan.hpp"
 #include "magic_enum_all.hpp"
+#include "spirv_cross/spirv_glsl.hpp"
 #include<iostream>
 void test()
 {vk::ApplicationInfo appInfo("Vulkan Test", VK_MAKE_VERSION(1, 0, 0), "No Engine",
@@ -24,6 +25,9 @@ void test()
     for (const auto& extension : instanceExtensions) {
         std::cout << "\t" << extension.extensionName << std::endl;
     }
+//
+    std::vector<uint32_t > a{};
+   spirv_cross::CompilerGLSL glsl{a};
 
     vk::InstanceCreateInfo instanceCreateInfo({}, &appInfo);
 

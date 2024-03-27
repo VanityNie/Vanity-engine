@@ -15,13 +15,18 @@ find_package(Vulkan REQUIRED)
 add_subdirectory(external/glfw)
 
 
-
 #only head
 include_directories(external/magic_enum)
 
-#engine
 
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+
+#engine
 add_subdirectory(engine)
+
 add_subdirectory(test)
 
 
